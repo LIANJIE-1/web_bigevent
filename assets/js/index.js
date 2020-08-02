@@ -45,10 +45,11 @@ function getUserInfo() {
 function renderUser(user) {
     // 1.渲染用户名
     var uname = user.nickname || user.username;
-    $('#welcome').html('欢迎&nbsp;&nbsp;', +uname);
+    // console.log(uname);
+    $('#welcome').html('欢迎&nbsp;&nbsp;' + uname);
     // 2.渲染用户头像
     //判断用户头像信息
-    if (user.user_pic) {
+    if (user.user_pic != null) {
         $('.layui-nav-img').show().attr('src', user.user_pic)
         $('.text-avatar').hide()
     } else {
